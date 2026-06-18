@@ -7,28 +7,12 @@
 
 <h2>Offline Hindi ↔ English Translator</h2>
 
-<input type="text" id="inputText" placeholder="Type word...">
-<button onclick="translate()">Translate</button>
+<input id="input" placeholder="Type word">
+<button onclick="translateWord()">Translate</button>
 
 <h3 id="result"></h3>
 
-<script>
-let dict = {};
-
-fetch("data.json")
-.then(res => res.json())
-.then(data => dict = data);
-
-function translate(){
-  let word = document.getElementById("inputText").value.toLowerCase();
-  
-  if(dict[word]){
-    document.getElementById("result").innerText = dict[word];
-  } else {
-    document.getElementById("result").innerText = "Not found";
-  }
-}
-</script>
+<script src="app.js"></script>
 
 </body>
 </html>
